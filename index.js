@@ -9,6 +9,9 @@ const cors = require('cors')
 const Category = require('./database/models/category');
 const Product = require('./database/models/product');
 const PORT = process.env.PORT || 3333;
+app.listen(PORT, ()=>{
+    console.log(`\n\nServer started on ${PORT} port...`)
+})
 
 Category.hasMany(Product);
 
