@@ -19,8 +19,6 @@ const app = express();
 app.use(express.static('public'))
 app.use(cors({
     origin: ['https://garden-project-one.vercel.app'], 
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.urlencoded());
