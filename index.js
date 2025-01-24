@@ -9,17 +9,15 @@ const cors = require('cors')
 const Category = require('./database/models/category');
 const Product = require('./database/models/product');
 const PORT = process.env.PORT || 3333;
-app.listen(PORT, ()=>{
-    console.log(`\n\nServer started on ${PORT} port...`)
-})
+
 
 Category.hasMany(Product);
 
 const app = express();
 app.use(express.static('public'))
-app.use(cors({
-    origin: ['https://garden-project-one.vercel.app'], 
-}));
+//app.use(cors({
+ //   origin: "*", 
+// }));
 
 app.use(express.urlencoded());
 app.use('/categories', categories);
